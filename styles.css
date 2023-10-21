@@ -46,18 +46,17 @@
     /* ASCII Art Styles */
  .centered {
     text-align: center;
-    width: fit-content; /* This will make the div wrap tightly around its content */
-    margin: 0 auto; /* Horizontally center the div */
+    width: 100%;
 }
 
 #ascii-art {
     white-space: pre;
     font-family: 'Courier New', Courier, monospace;
-    display: block; /* Ensure block level */
-    font-size: 12px; 
+    margin: 0; /* Resetting margin */
+    padding: 10px; /* Adjust this if needed */
+    display: inline-block; /* Inline block will allow it to take up only as much space as it needs */
     background-color: #ffffff;
     color: #000000;
-    padding: 10px;
     border: 1px solid #ccc;
 }
     </style>
