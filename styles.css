@@ -50,6 +50,8 @@
     background-color: #ffffff; /* If you want a specific background color */
     color: #000000; /* Adjust font color as needed */
     padding: 10px;
+    justify-content: center;
+    align-items: center;    
     border: 1px solid #ccc; /* Optional: add a border around the ASCII art */
 }
 
