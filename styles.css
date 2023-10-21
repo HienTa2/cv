@@ -44,24 +44,22 @@
         }
 
     /* ASCII Art Styles */
-    .centered {
+ .centered {
     text-align: center;
-    width: 100%;
-    }
-    #ascii-art {
-    white-space: pre;
-    font-family: 'Courier New', Courier, monospace;
-    display: inline-block;    
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px; /* Adjust size as needed */
-    background-color: #ffffff; /* If you want a specific background color */
-    color: #000000; /* Adjust font color as needed */
-    padding: 10px;
-    justify-content: center;
-    align-items: center;    
-    border: 1px solid #ccc; /* Optional: add a border around the ASCII art */
+    width: fit-content; /* This will make the div wrap tightly around its content */
+    margin: 0 auto; /* Horizontally center the div */
 }
 
+#ascii-art {
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    display: block; /* Ensure block level */
+    font-size: 12px; 
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
     </style>
 </head>
 
