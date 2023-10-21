@@ -44,7 +44,14 @@
         }
 
     /* ASCII Art Styles */
+    .centered {
+    text-align: center;
+    width: 100%;
+    }
     #ascii-art {
+    white-space: pre;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;    
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px; /* Adjust size as needed */
     background-color: #ffffff; /* If you want a specific background color */
