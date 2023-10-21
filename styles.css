@@ -42,6 +42,17 @@
                 opacity: 1;
             }
         }
+
+    /* ASCII Art Styles */
+    #ascii-art {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px; /* Adjust size as needed */
+    background-color: #ffffff; /* If you want a specific background color */
+    color: #000000; /* Adjust font color as needed */
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: add a border around the ASCII art */
+}
+
     </style>
 </head>
 
