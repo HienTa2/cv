@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hien Ta | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <div class="centered">    
@@ -44,7 +45,11 @@
     <section id="bio">
         <h2>About Me</h2>
         <p>
-            Hailing from The Colony, Texas, I have over a decade of experience in technology, particularly in healthcare and life sciences. As the founder of Meditegra, I've combined my passion for technology with innovation to deliver impactful solutions. I hold certifications including the Google Cloud Professional Associate Cloud Engineer (GCP ACE) and SAFe Agilist. I recently earned a Master of Science in Data Analytics, further solidifying my commitment to leveraging data and cloud technologies to drive meaningful results.
+            Born in Vietnam and immigrating to the United States at the age of 8, my journey has been shaped by curiosity, resilience, and a deep passion for technology. Growing up in Dallas, Texas, I developed an early fascination with how technology can solve real-world problems, eventually leading me to specialize in healthcare and life sciences.
+
+As the founder of Meditegra, I've had the privilege of combining my technical expertise with innovative thinking to create impactful solutions. Along the way, I earned certifications as a Google Cloud Professional Associate Cloud Engineer and SAFe Agilist, and recently completed a Master of Science in Data Analytics. These achievements reflect my commitment to staying at the forefront of data and cloud technologies.
+
+Outside of work, I enjoy hiking with my family and exploring the world one cup of coffee at a time. Every challenge I take on is fueled by the belief that technology, when used thoughtfully, has the power to improve lives and make a difference.
         </p>
     </section>
     <hr>
@@ -52,6 +57,7 @@
         <div class="tabs">
             <button class="tab-button active" onclick="openTab(event, 'work')">Work Experience</button>
             <button class="tab-button" onclick="openTab(event, 'skills')">Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'certifications')">Certifications</button>
         </div>
         <div id="work" class="tab-content">
             <h2>Work Experience</h2>
@@ -75,12 +81,12 @@
                         <td>Systems Integration Senior Analyst (L3)</td>
                     </tr>
                     <tr>
-                        <td>2013 - 2018</td>
+                        <td>2016 - 2018</td>
                         <td>DELL</td>
                         <td>Technical Support L3</td>
                     </tr>
                     <tr>
-                        <td>2008 - 2013</td>
+                        <td>2013 - 2016</td>
                         <td>Theatro</td>
                         <td>Tier 1 Support</td>
                     </tr>
@@ -107,11 +113,18 @@
                     <td>Python</td>
                     <td>⭐⭐</td>
                 </tr>
-                 <tr>
+                <tr>
                     <td>Google Cloud Platform</td>
                     <td>⭐⭐</td>
                 </tr>
             </table>
+        </div>
+        <div id="certifications" class="tab-content" style="display: none;">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Google Cloud Professional Associate Cloud Engineer (GCP ACE)</li>
+                <li>SAFe Agilist 5</li>
+            </ul>
         </div>
         <hr>
         <section id="contact">
@@ -128,4 +141,16 @@
         </section>
     </main>
 </body>
+<script>
+    function openTab(evt, tabName) {
+        const tabContents = document.querySelectorAll(".tab-content");
+        const tabButtons = document.querySelectorAll(".tab-button");
+
+        tabContents.forEach((tab) => (tab.style.display = "none"));
+        tabButtons.forEach((button) => button.classList.remove("active"));
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active");
+    }
+</script>
 </html>
