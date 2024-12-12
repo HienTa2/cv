@@ -1,50 +1,56 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>My Hobbies</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="centered">    
-            <pre id="ascii-art">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hien Ta | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="centered">    
+        <pre id="ascii-art">
     ____    __    ____  _______  __        ______   ______   .___  ___.  _______ 
     \   \  /  \  /   / |   ____||  |      /      | /  __  \  |   \/   | |   ____|
      \   \/    \/   /  |  |__   |  |     |  ,----'|  |  |  | |  \  /  | |  |__   
       \            /   |   __|  |  |     |  |     |  |  |  | |  |\/|  | |   __|  
        \    /\    /    |  |____ |  `----.|  `----.|  `--'  | |  |  |  | |  |____ 
         \__/  \__/     |_______||_______| \______| \______/  |__|  |__| |_______|
-        
-            </pre>
+        </pre>
+    </div>
+    <header>
+        <table cellspacing="20">
+            <tr>
+                <td>
+                    <img src="20230821_130647.jpg" alt="Hien Ta's profile picture" width="200" height="200">
+                </td>
+                <td>
+                    <h1>Hien Ta</h1>
+                    <p>
+                        <a href="mailto:hienta@pm.me">hienta@pm.me</a> | (555) 555-1234
+                    </p>
+                    <p>
+                        <em>Founder of <a href="https://meditegra.com/"><strong>Meditegra</strong></a></em>
+                    </p>
+                    <p>
+                        Certified Cloud Engineer & Data Analyst | Driving Data-Driven Innovations
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <section id="bio">
+        <h2>About Me</h2>
+        <p>
+            Hailing from The Colony, Texas, I have over a decade of experience in technology, particularly in healthcare and life sciences. As the founder of Meditegra, I've combined my passion for technology with innovation to deliver impactful solutions. I hold certifications including the Google Cloud Professional Associate Cloud Engineer (GCP ACE) and SAFe Agilist. I recently earned a Master of Science in Data Analytics, further solidifying my commitment to leveraging data and cloud technologies to drive meaningful results.
+        </p>
+    </section>
+    <hr>
+    <main>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'work')">Work Experience</button>
+            <button class="tab-button" onclick="openTab(event, 'skills')">Skills</button>
         </div>
-        <header>
-            <table cellspacing="20">
-                <tr>
-                    <td>
-                        <img src="20230821_130647.jpg" alt="Hien Ta's profile picture" width="200" height="200">
-                    </td>
-                    <td>
-                        <h1>Hien Ta</h1>
-                        <p>
-                            <a href="contact.html">Contact Me</a>
-                        </p>
-                        <p>
-                            <em>Founder of <a href="https://meditegra.com/"><strong>Meditegra</strong></a></em>
-                        </p>
-                        <p>I am a lifelong learner and I love ☕.</p>
-                        <p>Certified Cloud Engineer & Data Analyst | Driving Data-Driven Innovations</p>
-                    </td>
-                </tr>
-            </table>
-        </header>
-        <section id="bio">
-            <h2>About Me</h2>
-            <p>
-                Hailing from The Colony, Texas, I have over a decade of experience in technology, particularly in healthcare and life sciences. As the founder of Meditegra, I've combined my passion for technology with innovation to deliver impactful solutions. I hold certifications including the Google Cloud Professional Associate Cloud Engineer (GCP ACE) and SAFe Agilist, showcasing my expertise in cloud technologies and agile methodologies. I recently earned a Master of Science in Data Analytics, further solidifying my commitment to leveraging data and cloud technologies to drive meaningful results.
-            </p>
-        </section>
-        <hr>
-        <main>
+        <div id="work" class="tab-content">
             <h2>Work Experience</h2>
             <table>
                 <thead>
@@ -63,7 +69,7 @@
                     <tr>
                         <td>2018 - 2020</td>
                         <td>NTT DATA</td>
-                        <td>Systems Integration Senior Analyst</td>
+                        <td>Systems Integration Senior Analyst (L3)</td>
                     </tr>
                     <tr>
                         <td>2016 - 2018</td>
@@ -71,60 +77,59 @@
                         <td>Technical Support L3</td>
                     </tr>
                     <tr>
-                        <td>2012 - 2016</td>
+                        <td>2013 - 2016</td>
                         <td>Theatro</td>
                         <td>Tier 1 Support</td>
                     </tr>
                     <tr>
-                        <td>2008 - 2012</td>
-                        <td>www.eivf.org</td>
+                        <td>2008 - 2013</td>
+                        <td>eIVF</td>
                         <td>L2 Support Analyst</td>
                     </tr>
                 </tbody>
             </table>
-            <hr>
+        </div>
+        <div id="skills" class="tab-content" style="display: none;">
             <h2>Skills</h2>
             <table cellspacing="10">
                 <tr>
-                    <td>
-                        <table cellspacing="10">
-                            <tr>
-                                <td>Linux</td>
-                                <td>⭐⭐⭐</td>
-                            </tr>
-                            <tr>
-                                <td>SQL</td>
-                                <td>⭐⭐⭐</td>
-                            </tr>
-                            <tr>
-                                <td>Python</td>
-                                <td>⭐⭐</td>
-                            </tr>
-                            <tr>
-                                <td>Dynatrace</td>
-                                <td>⭐⭐</td>
-                            </tr>
-                            <tr>
-                                <td>Splunk</td>
-                                <td>⭐</td>
-                            </tr>
-                        </table>
-                    </td>
+                    <td>Linux</td>
+                    <td>⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Google Cloud Platform</td>
+                    <td>⭐⭐</td>
                 </tr>
             </table>
-            <hr>
-            <h2>Education</h2>
-            <ul>
-                <li>Collin College - AAS Information System CyberSecurity</li>
-                <li>Western Governors University - B.S. Business Administration IT Management</li>
-                <li>Western Governors University - MS Data Analytics (Graduated May 2024)</li>
-                <li>Certifications: Google Cloud Professional Associate Cloud Engineer (GCP ACE), SAFe Agilist</li>
-            </ul>
-            <hr>
-            <h2>Hobbies</h2>
-            <a href="hobbies.html">My Hobbies</a>
-            <h2>My Projects</h2>
-            <a href="projects.html">My Projects</a>
-        </main>
-    </body>
+        </div>
+        <hr>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="mailto:hienta@pm.me" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Connect with me:</p>
+        <a href="www.linkedin.com/in/hien-ta-msda" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/hien-ta" target="_blank">GitHub</a> |
+        <a href="https://public.tableau.com/app/profile/hien.ta/vizzes" target="_blank">Tableau</a>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
 </html>
