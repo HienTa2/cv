@@ -1,87 +1,215 @@
-/* General Styles */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+/* Retro Terminal Polish (keeps your old-school vibe, just cleaner) */
+:root{
+  --bg: #0b0f14;
+  --panel: rgba(255,255,255,.04);
+  --panel2: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.88);
+  --muted: rgba(255,255,255,.65);
+  --accent: #7CFF7A;       /* terminal green */
+  --accent2: #7aa2ff;      /* link blue */
+  --shadow: 0 16px 60px rgba(0,0,0,.45);
+  --r: 16px;
+  --max: 980px;
 }
 
-h1, h2, h3 {
-    font-weight: 600;
-    color: #000;
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  padding: 20px 16px 60px;
+  color: var(--text);
+  background:
+    radial-gradient(900px 700px at 20% 20%, rgba(124,255,122,.10), transparent 55%),
+    radial-gradient(900px 700px at 75% 80%, rgba(122,162,255,.10), transparent 55%),
+    linear-gradient(180deg, #070a0f, var(--bg));
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.65;
 }
 
-p, ul, a {
-    font-size: 18px;
+/* Keep content centered (works with your existing .centered ascii wrapper) */
+header, main, section, footer{
+  width: min(var(--max), 100%);
+  margin: 0 auto;
 }
 
-a {
-    text-decoration: none;
-    color: #007aff;
-    transition: color 0.3s ease;
+h1, h2, h3{
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 0 0 10px;
 }
 
-a:hover {
-    color: #0056b3;
+p, ul, a{
+  font-size: 16px; /* slightly smaller + tighter = more terminal vibe */
 }
 
-button {
-    background-color: #007aff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+p{ color: var(--muted); margin: 0 0 12px; }
+ul{ color: var(--muted); }
+
+a{
+  color: var(--accent2);
+  text-decoration: underline;
+  text-decoration-color: rgba(122,162,255,.45);
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+a:hover{
+  color: #b7caff;
+  text-decoration-color: rgba(183,202,255,.85);
 }
 
-button:hover {
-    background-color: #0056b3;
+/* ASCII banner: make it look like a terminal block */
+.centered{
+  width: min(var(--max), 100%);
+  margin: 0 auto 14px;
+}
+#ascii-art{
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+  color: rgba(124,255,122,.85);
+  text-shadow: 0 0 12px rgba(124,255,122,.15);
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Optional: subtle scanlines on the ASCII block */
+#ascii-art{
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,.04), rgba(255,255,255,0)),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.04) 0px,
+      rgba(255,255,255,.04) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    );
 }
 
-table th, table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
+/* Header “card” look without changing your HTML */
+header{
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+/* Make your profile image feel intentional */
+header img{
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
 }
 
 /* Tabs */
-.tabs {
-    display: flex;
-    margin-bottom: 20px;
+.tabs{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 14px;
 }
 
-.tab-button {
-    background: #f0f0f0; /* Light gray for better contrast when not selected */
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    color: #333; /* Darker text for better readability */
-    font-weight: 600; /* Bold text for better visibility */
+.tab-button{
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor:pointer;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: .2px;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease, transform .05s ease;
+}
+.tab-button:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border-color: rgba(255,255,255,.18);
+}
+.tab-button:active{ transform: translateY(1px); }
+
+.tab-button.active{
+  background: rgba(124,255,122,.14);
+  border-color: rgba(124,255,122,.35);
+  color: var(--text);
+  box-shadow: 0 0 0 3px rgba(124,255,122,.12);
 }
 
-.tab-button:hover {
-    background-color: #e0e0e0; /* Slightly darker gray for hover effect */
+/* Tables: give them a “terminal UI” look */
+table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.18);
 }
 
-.tab-button.active {
-    background-color: #007aff; /* Bright blue for active button */
-    color: white; /* White text on active button for contrast */
+table th, table td{
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+table th{
+  color: rgba(255,255,255,.82);
+  background: rgba(255,255,255,.04);
+  font-weight: 900;
+}
+table td{ color: var(--muted); }
+table tr:last-child td{ border-bottom: none; }
+
+/* Buttons (if you keep any) */
+button{
+  background: rgba(124,255,122,.14);
+  color: var(--text);
+  border: 1px solid rgba(124,255,122,.35);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-weight: 800;
+  letter-spacing: .2px;
+  transition: background-color .15s ease, transform .05s ease, border-color .15s ease;
+}
+button:hover{
+  background: rgba(124,255,122,.20);
+  border-color: rgba(124,255,122,.45);
+}
+button:active{ transform: translateY(1px); }
+
+/* Section separators */
+hr{
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,.10);
+  margin: 18px 0;
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f8f8f8;
+footer{
+  margin-top: 18px;
+  padding: 12px;
+  text-align:center;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: rgba(255,255,255,.03);
+}
+
+/* Better mobile layout for your header table */
+@media (max-width: 720px){
+  header table, header tbody, header tr, header td{
+    display:block;
+    width: 100%;
+  }
+  header td{ padding: 0 !important; }
+  header img{ width: 160px; height: 160px; margin-bottom: 10px; }
 }
